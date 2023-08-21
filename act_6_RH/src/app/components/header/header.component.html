@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar m-4 border-bottom border-3 border-dark">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <img class="navbar-brand imgsize"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBvI4ULbA98lgRpF-fm6WQbEHB3N_w4pgkxg&usqp=CAU"
+            alt="Logo" >
+        <!-- Título -->
+        <a class="navbar-brand" [routerLink]="['/home']">Lista de Usuarios</a>
+        <!-- Botón para colapsar el menú en dispositivos pequeños -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Menú de navegación -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/home']">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/newuser']">Nuevo Usuario</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

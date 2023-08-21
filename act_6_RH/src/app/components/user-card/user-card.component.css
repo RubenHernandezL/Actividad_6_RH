@@ -1,0 +1,29 @@
+div.card{
+    background-color: rgba(196, 160, 128, 0.691);
+}
+
+h3 {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.card-link {
+    text-decoration: none;
+    color: rgb(73, 73, 73);
+    font-size: 0.65rem;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.card-link:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+a img{
+    width: 30px;
+    height: 30px;
+}
+
+.divcontainer {
+    justify-content: space-evenly;
+}

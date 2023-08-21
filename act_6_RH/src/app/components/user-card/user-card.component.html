@@ -1,0 +1,18 @@
+<div class="card border-2 border-secondary text-center p-2 shadow">
+    <img class="card-img-top img-fluid rounded-circle mx-auto p-3 mb-2 shadow-sm" src="{{allUsers?.image}}" alt="userimg">
+    <h3 class="card-title m-2 ">{{allUsers?.first_name}} {{allUsers?.last_name}}</h3>
+    <div class="container d-flex divcontainer mt-2">
+        <a class="card-link" [routerLink]="['/user', allUsers?._id]">
+            <img src="https://cdn-icons-png.flaticon.com/128/711/711319.png"/>
+            <div>Ver detalle</div>
+        </a>
+        <a class="card-link" [routerLink]="['/updateuser', allUsers?._id]">
+            <img src="https://cdn-icons-png.flaticon.com/128/875/875100.png" />
+            <div>Actualizar</div>
+        </a>
+        <a class="card-link" (click)="deleteUser(allUsers?._id, allUsers?.first_name)">
+            <img src="https://cdn-icons-png.flaticon.com/128/1214/1214428.png" />
+            <div>Borrar</div>
+        </a>
+    </div>
+</div>
