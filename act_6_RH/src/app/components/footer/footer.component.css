@@ -1,16 +1,16 @@
 .page-link.rounded-circle {
-    background-color: #FFA500;
+    background-color: #ffa600;
     border-color: #FFA500;
     color: white;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
 .page-link.rounded-circle:hover {
-    background-color: #FF8C00;
+    background-color: #c46c00;
     border-color: #FF8C00;
 }
 
-.page-item.active .page-link.rounded-circle {
-    background-color: #c26d04;
+.page-link.rounded-circle.active {
+    background-color: #713e00;
     border-color: #FF8C00;
 }

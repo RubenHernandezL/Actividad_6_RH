@@ -1,13 +1,28 @@
-<section class="container rounded bgcolor">
-    <div class="row mt-5">
+<section class="container rounded bgcolor mt-5">
+    <div class="row">
         <div class="col-12 col-lg-6 border-end border-black border-2 m-3">
             <img class="img-fluid rounded-circle mx-auto p-3 mb-2 shadow-sm" src="{{user?.image}}" alt="UserImg">
         </div>
-        <div class="col-12 col-lg-6 m-3">
+        <div class="col-12 col-lg-5 m-3 d-flex flex-column justify-content-center">
             <h2 class="title">{{user?.first_name}}</h2>
-            <h2 class="title">{{user?.last_name}}</h2>
-            <p class="text-body"><strong>Nombre de Usuario:</strong> {{user?.username}}</p>
+            <h2 class="title mt-3">{{user?.last_name}}</h2>
+            <p class="text-body mt-5"><strong>Nombre de Usuario:</strong> {{user?.username}}</p>
+            <p class="text-body mt-2"><strong>Email:</strong> {{user?.email}}</p>
+            <div class="container d-flex divcontainer mt-5 text-center">
+                <a class="btn btn-outline-dark flex-fill custom-btn" (click)="deleteUser(user?._id, user?.first_name)">
+                    <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/128/1214/1214428.png" />
+                    <div>Eliminar</div>
+                </a>
+                <a class="btn btn-outline-dark flex-fill custom-btn" [routerLink]="['/updateuser', user?._id]">
+                    <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/128/875/875100.png" />
+                    <div>Actualizar</div>
+                </a>
+                <a class="btn btn-outline-dark flex-fill custom-btn" [routerLink]="['/home']">
+                    <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/128/2459/2459427.png" />
+                    <div>Volver al listado</div>
+                </a>
+            </div>
+
         </div>
     </div>
-
 </section>

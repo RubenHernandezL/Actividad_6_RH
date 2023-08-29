@@ -1,4 +1,4 @@
-div.card{
+div.card {
     background-color: rgba(196, 160, 128, 0.691);
 }
 
@@ -19,7 +19,7 @@ h3 {
     text-decoration: underline;
 }
 
-a img{
+a img {
     width: 30px;
     height: 30px;
 }
