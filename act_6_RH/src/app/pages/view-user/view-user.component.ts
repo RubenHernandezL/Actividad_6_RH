@@ -9,9 +9,9 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./view-user.component.css']
 })
 export class ViewUserComponent {
-  //para poder capturar el ID de la ruta, que es lo que necesitamos para saber cual es el usuario que vamos a pintar en la vista, necesitamos capturar la ruta variable (id).
+  //para poder capturar el ID de la ruta, que es lo que necesitamos para saber cual es el usuario que vamos a pintar en la vista, necesitamos capturar la ruta variable (id) y para ello necesitamos inyectar el activatedRoute.
   activatedRoute = inject(ActivatedRoute);
-  //tenemos que capturar el usuario que recibamos para poder pintarlo. Para ello se crea la propuedad user.
+  //tenemos que almacenar en una variable el usuario que recibamos para poder pintarlo. Para ello se crea la propiedad user.
   user!: User | any;
   //para peticiones al servicio hay que inyectarlo. Se inyecta el servicio.
   usersService = inject(UsersService);

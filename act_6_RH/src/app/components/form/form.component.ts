@@ -22,7 +22,7 @@ export class FormComponent {
   activatedRoute = inject(ActivatedRoute);
   //creamos la variable clave para definir el tipo de input y que se muestre o no la clave que se encuentre en el formulario.
   clave: string = "password"
-  //inicializamos el formulario.
+  //inicializamos el formulario según el requerimiento de paráe¡metros que necesita la petición Post de la API "Nuevo Usuario".
   constructor() {
     this.userForm = new FormGroup({
       first_name: new FormControl("", [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
@@ -50,7 +50,8 @@ export class FormComponent {
             alert("Error: " + response.error + ".");
             this.router.navigate(["/home"]);
           } else {
-            //Rellenamos el form, trasteando me he dado cuenta que todos los campos se pueden modificar, por lo cual agregamos el campo "image". Este lo hacemos oculto cuando es un nuevo usuario, ya que aunque le aportes ese dato al método post, la API crea una URL genérica que es la que almacena por lo que es tiempo perdido enviarselo en un nuevo usuario.
+            //Rellenamos el form tras recuperar el usuario deseado previamente. 
+            //Trasteando, me he dado cuenta que todos los campos se pueden modificar, por lo cual agregamos el campo "image", para que el usuario se capaz de modificar la imagen del usuario. Este campo no se enuentra en un nuevo usuario, ya que aunque se le aporte ese dato a la API con el método post, no se respeta la URL suministrada y la API crea una URL genérica que es la que almacena y devuelve como respuesta.
             this.userForm = new FormGroup({
               id: new FormControl(response.id, []),
               _id: new FormControl(response._id, []),
@@ -73,7 +74,7 @@ export class FormComponent {
       }
     });
   };
-  //como recibimos toda la respuesta del form (OK) ahora tenemos que recibir la respuesta del servicio tras inyectar un post, entonces recibimos una promesa.
+  //como recibimos toda la respuesta del form, ahora tenemos que recibir la respuesta del servicio tras inyectar un post, por lo que recibiríamos una promesa, pero no retornaría nada la función.
   async getDataForm(): Promise<void> {
     //la diferencia entre el actualizar y el crear un nuevo usuario la gestionamos con un condicional, le agregamos el id al form sin necesidad de ser necesario actualizarse, para que se diferencia el otro método y mantenga el _id correspondiente.
     if (this.userForm.value._id) {
@@ -103,7 +104,7 @@ export class FormComponent {
       }
     }
   };
-  //hacemos el método (función) que nos gestionará todas las condiciones de nuestors mensajes de campos requeridos en el formulario.
+  //hacemos el método (checkControl), que nos gestionará todas las condiciones para mostrar de manera efectiva los mensajes de los errores en los campos del formulario.
   checkControl(formcontrolName: string, validator: string): boolean | undefined {
     return this.userForm.get(formcontrolName)?.hasError(validator) && this.userForm.get(formcontrolName)?.touched
   };

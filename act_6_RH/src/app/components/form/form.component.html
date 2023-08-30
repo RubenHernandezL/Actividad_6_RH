@@ -6,10 +6,8 @@
             <input type="text" class="form-control" formControlName="first_name" id="first_name"
                 placeholder="Introduzca el nombre completo">
             <p class="error" *ngIf="checkControl('first_name', 'required')">El campo es requerido.</p>
-            <p class="error" *ngIf="checkControl('first_name', 'minlength')">Los nombres deben contener como mínimo "3"
-                caracteres.</p>
-            <p class="error" *ngIf="checkControl('first_name', 'maxlength')">Los nombres deben contener como máximo "50"
-                caracteres.</p>
+            <p class="error" *ngIf="checkControl('first_name', 'minlength')">Los nombres deben contener como mínimo "3" caracteres.</p>
+            <p class="error" *ngIf="checkControl('first_name', 'maxlength')">Los nombres deben contener como máximo "50" caracteres.</p>
         </div>
         <div class="mt-4">
             <label class="form-label" for="last_name">Apellidos</label>
@@ -56,8 +54,7 @@
             <p class="error" *ngIf="checkControl('password', 'required')">El campo es requerido.</p>
             <p class="error mb-1" *ngIf="checkControl('password', 'minlength')">La contraseña debe contener como mínimo
                 "8" caracteres.</p>
-            <p class="error" *ngIf="checkControl('password', 'pattern')">La contraseña debe contener como mínimo un
-                carácter numérico y una letra y no poseer espacios en blanco.</p>
+            <p class="error" *ngIf="checkControl('password', 'pattern')">La contraseña debe contener como mínimo un carácter numérico, una letra y no poseer espacios en blanco.</p>
         </div>
         <input type="submit" class="btn rounded-bottom-2 btn-dark mt-5" [disabled]="userForm.invalid"
             value="{{typeForm}}">
